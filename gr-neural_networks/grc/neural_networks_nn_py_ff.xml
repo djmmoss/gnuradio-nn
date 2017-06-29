@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<block>
+  <name>nn_py_ff</name>
+  <key>neural_networks_nn_py_ff</key>
+  <category>[neural_networks]</category>
+  <import>import neural_networks</import>
+  <make>neural_networks.nn_py_ff($learn, $model, $weights)</make>
+  <callback>set_learn($learn)</callback>
+  <callback>set_model($model)</callback>
+  <callback>set_weights($weights)</callback>
+  <param>
+    <name>Learn</name>
+    <key>learn</key>
+    <type>bool</type>
+  </param>
+  <param>
+    <name>Model Description</name>
+    <key>model</key>
+    <type>string</type>
+  </param>
+  <param>
+    <name>Model Weights</name>
+    <key>weights</key>
+    <type>string</type>
+  </param>
+
+  <sink>
+    <name>in</name>
+    <type>float</type>
+  </sink>
+
+  <source>
+    <name>out</name>
+    <type>float</type>
+  </source>
+</block>

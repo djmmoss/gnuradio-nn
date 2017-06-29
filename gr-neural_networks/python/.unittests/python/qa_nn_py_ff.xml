@@ -1,0 +1,16 @@
+<testsuite errors="0" failures="1" name="unittest.suite.TestSuite" tests="1" time="8.227">
+  <testcase classname="__main__.qa_nn_py_ff" name="test_001_t" time="8.2268">
+    <failure type="exceptions.AssertionError">0.99779927868060025 != 0.9117473363876343 within 1 places
+  File "/home/duncan/anaconda3/envs/gnuradio/lib/python2.7/unittest/case.py", line 329, in run
+    testMethod()
+  File "qa_nn_py_ff.py", line 65, in test_001_t
+    self.assertFloatTuplesAlmostEqual(expected_result[-n_plot:], next_data[-n_plot:], 1)
+  File "/home/duncan/.gnuradio/lib/python2.7/dist-packages/gnuradio/gr_unittest.py", line 90, in assertFloatTuplesAlmostEqual
+    self.assertAlmostEqual (a[i], b[i], places, msg)
+  File "/home/duncan/anaconda3/envs/gnuradio/lib/python2.7/unittest/case.py", line 561, in assertAlmostEqual
+    raise self.failureException(msg)
+    </failure>
+  </testcase>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -31,7 +31,8 @@ endif()
 GR_PYTHON_INSTALL(
     FILES
     __init__.py
-    nn_py_ff.py DESTINATION ${GR_PYTHON_DIR}/neural_networks
+    nn_py_ff.py
+    nn_mod_py_cf.py DESTINATION ${GR_PYTHON_DIR}/neural_networks
 )
 
 ########################################################################
@@ -42,3 +43,4 @@ include(GrTest)
 set(GR_TEST_TARGET_DEPS gnuradio-neural_networks)
 set(GR_TEST_PYTHON_DIRS ${CMAKE_BINARY_DIR}/swig)
 GR_ADD_TEST(qa_nn_py_ff ${PYTHON_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/qa_nn_py_ff.py)
+GR_ADD_TEST(qa_nn_mod_py_cf ${PYTHON_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/qa_nn_mod_py_cf.py)

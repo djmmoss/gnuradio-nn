@@ -17,5 +17,6 @@
 # the Free Software Foundation, Inc., 51 Franklin Street,
 # Boston, MA 02110-1301, USA.
 install(FILES
-    neural_networks_nn_py_ff.xml DESTINATION share/gnuradio/grc/blocks
+    neural_networks_nn_py_ff.xml
+    neural_networks_nn_mod_py_cf.xml DESTINATION share/gnuradio/grc/blocks
 )

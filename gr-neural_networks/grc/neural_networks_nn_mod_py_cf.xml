@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<block>
+  <name>nn_mod_py_cf</name>
+  <key>neural_networks_nn_mod_py_cf</key>
+  <category>[neural_networks]</category>
+  <import>import neural_networks</import>
+  <make>neural_networks.nn_mod_py_cf($model, $weights)</make>
+  <callback>set_model($model)</callback>
+  <callback>set_weights($weights)</callback>
+ <param>
+    <name>Model Description</name>
+    <key>model</key>
+    <type>string</type>
+  </param>
+  <param>
+    <name>Model Weights</name>
+    <key>weights</key>
+    <type>string</type>
+  </param>
+
+  <sink>
+    <name>in</name>
+    <type>complex</type>
+  </sink>
+
+  <source>
+    <name>out</name>
+    <type>float</type>
+  </source> 
+</block>

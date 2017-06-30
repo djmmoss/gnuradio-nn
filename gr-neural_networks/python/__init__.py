@@ -33,5 +33,6 @@ except ImportError:
 # import any pure python here
 
 from nn_py_ff import nn_py_ff
+from nn_mod_py_cf import nn_mod_py_cf
 
 #

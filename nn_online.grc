@@ -46,7 +46,7 @@
     </param>
     <param>
       <key>id</key>
-      <value>top_block</value>
+      <value>nn_online</value>
     </param>
     <param>
       <key>max_nouts</key>
@@ -180,7 +180,7 @@
     </param>
     <param>
       <key>label</key>
-      <value></value>
+      <value>Model</value>
     </param>
     <param>
       <key>labels</key>
@@ -1234,7 +1234,7 @@
     <key>qtgui_time_sink_x</key>
     <param>
       <key>autoscale</key>
-      <value>False</value>
+      <value>True</value>
     </param>
     <param>
       <key>axislabels</key>
@@ -1578,7 +1578,7 @@
     </param>
     <param>
       <key>ylabel</key>
-      <value>Amplitude</value>
+      <value>Error</value>
     </param>
     <param>
       <key>yunit</key>

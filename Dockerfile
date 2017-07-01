@@ -14,4 +14,4 @@ RUN mkdir build && \
 	make install && \
 	ldconfig
 
-CMD ["grcc", "-e", "nn_learn_example.grc"]
+CMD ["/bin/bash"]

@@ -3,7 +3,7 @@
 ##################################################
 # GNU Radio Python Flow Graph
 # Title: Nn Mod
-# Generated: Fri Jun 30 19:39:09 2017
+# Generated: Sun Jul  2 12:24:23 2017
 ##################################################
 
 if __name__ == '__main__':
@@ -88,7 +88,6 @@ class NN_MOD(gr.top_block, Qt.QWidget):
         self._data_file_button_group.buttonClicked[int].connect(
         	lambda i: self.set_data_file(self._data_file_options[i]))
         self.top_layout.addWidget(self._data_file_group_box)
-        self.wbfm = analog.sig_source_f(0, analog.GR_CONST_WAVE, 0, 0, 10)
         self.qtgui_time_sink_x_0 = qtgui.time_sink_f(
         	1024, #size
         	samp_rate, #samp_rate
@@ -110,14 +109,14 @@ class NN_MOD(gr.top_block, Qt.QWidget):
         if not True:
           self.qtgui_time_sink_x_0.disable_legend()
 
-        labels = ['Input', '8PSK', 'AM-DSB', 'AM-SSB', 'BPSK',
-                  'CPFSK', 'GFSK', 'PAM4', 'QAM16', 'QAM64', 'QPSK', 'WBFM']
+        labels = ['Input', 'WBFM', 'QPSK', 'QAM64', 'QAM16',
+                  'PAM4', 'GFSK', 'CPFSK', 'BPSK', 'AM-SBB', 'AM-DSB', '8PSK']
         widths = [1, 1, 1, 1, 1,
                   1, 1, 1, 1, 1, 1, 1]
         colors = ["blue", "red", "green", "cyan", "black",
-                  "magenta", "yellow", "dark red", "dark green", "cyan", "yellow", "magenta"]
-        styles = [1, 2, 3, 3, 2,
-                  2, 2, 2, 2, 2, 2, 3]
+                  "magenta", "yellow", "dark red", "dark green", "cyan", "black", "green"]
+        styles = [1, 3, 2, 2, 2,
+                  2, 2, 2, 2, 3, 3, 2]
         markers = [-1, -1, -1, -1, -1,
                    -1, -1, -1, -1, -1, -1, -1]
         alphas = [1.0, 0.7, 0.7, 0.7, 0.7,
@@ -136,37 +135,38 @@ class NN_MOD(gr.top_block, Qt.QWidget):
 
         self._qtgui_time_sink_x_0_win = sip.wrapinstance(self.qtgui_time_sink_x_0.pyqwidget(), Qt.QWidget)
         self.top_layout.addWidget(self._qtgui_time_sink_x_0_win)
-        self.qpsk = analog.sig_source_f(0, analog.GR_CONST_WAVE, 0, 0, 9)
-        self.qam64 = analog.sig_source_f(0, analog.GR_CONST_WAVE, 0, 0, 8)
-        self.qam16 = analog.sig_source_f(0, analog.GR_CONST_WAVE, 0, 0, 7)
-        self.psk_8 = analog.sig_source_f(0, analog.GR_CONST_WAVE, 0, 0, 0)
-        self.pam4 = analog.sig_source_f(0, analog.GR_CONST_WAVE, 0, 0, 6)
         self.neural_networks_nn_mod_py_cf_0 = neural_networks.nn_mod_py_cf('models/conv.json', 'weights/convmodrecnets_CNN2_0.5.wts.h5')
-        self.gfsk = analog.sig_source_f(0, analog.GR_CONST_WAVE, 0, 0, 5)
-        self.cpfsk = analog.sig_source_f(0, analog.GR_CONST_WAVE, 0, 0, 4)
-        self.bpsk = analog.sig_source_f(0, analog.GR_CONST_WAVE, 0, 0, 3)
         self.blocks_throttle_0 = blocks.throttle(gr.sizeof_gr_complex*1, samp_rate,True)
         self.blocks_file_source_0 = blocks.file_source(gr.sizeof_gr_complex*1, data_file, True)
-        self.am_ssb = analog.sig_source_f(0, analog.GR_CONST_WAVE, 0, 0, 2)
-        self.am_dsb = analog.sig_source_f(0, analog.GR_CONST_WAVE, 0, 0, 1)
+        self.analog_const_source_x_0_1_7 = analog.sig_source_f(0, analog.GR_CONST_WAVE, 0, 0, 0)
+        self.analog_const_source_x_0_1_6 = analog.sig_source_f(0, analog.GR_CONST_WAVE, 0, 0, 1)
+        self.analog_const_source_x_0_1_5 = analog.sig_source_f(0, analog.GR_CONST_WAVE, 0, 0, 2)
+        self.analog_const_source_x_0_1_4 = analog.sig_source_f(0, analog.GR_CONST_WAVE, 0, 0, 3)
+        self.analog_const_source_x_0_1_3 = analog.sig_source_f(0, analog.GR_CONST_WAVE, 0, 0, 4)
+        self.analog_const_source_x_0_1_2 = analog.sig_source_f(0, analog.GR_CONST_WAVE, 0, 0, 5)
+        self.analog_const_source_x_0_1_1 = analog.sig_source_f(0, analog.GR_CONST_WAVE, 0, 0, 6)
+        self.analog_const_source_x_0_1_0 = analog.sig_source_f(0, analog.GR_CONST_WAVE, 0, 0, 7)
+        self.analog_const_source_x_0_1 = analog.sig_source_f(0, analog.GR_CONST_WAVE, 0, 0, 8)
+        self.analog_const_source_x_0_0 = analog.sig_source_f(0, analog.GR_CONST_WAVE, 0, 0, 9)
+        self.analog_const_source_x_0 = analog.sig_source_f(0, analog.GR_CONST_WAVE, 0, 0, 10)
 
         ##################################################
         # Connections
         ##################################################
-        self.connect((self.am_dsb, 0), (self.qtgui_time_sink_x_0, 2))
-        self.connect((self.am_ssb, 0), (self.qtgui_time_sink_x_0, 3))
+        self.connect((self.analog_const_source_x_0, 0), (self.qtgui_time_sink_x_0, 1))
+        self.connect((self.analog_const_source_x_0_0, 0), (self.qtgui_time_sink_x_0, 2))
+        self.connect((self.analog_const_source_x_0_1, 0), (self.qtgui_time_sink_x_0, 3))
+        self.connect((self.analog_const_source_x_0_1_0, 0), (self.qtgui_time_sink_x_0, 4))
+        self.connect((self.analog_const_source_x_0_1_1, 0), (self.qtgui_time_sink_x_0, 5))
+        self.connect((self.analog_const_source_x_0_1_2, 0), (self.qtgui_time_sink_x_0, 6))
+        self.connect((self.analog_const_source_x_0_1_3, 0), (self.qtgui_time_sink_x_0, 7))
+        self.connect((self.analog_const_source_x_0_1_4, 0), (self.qtgui_time_sink_x_0, 8))
+        self.connect((self.analog_const_source_x_0_1_5, 0), (self.qtgui_time_sink_x_0, 9))
+        self.connect((self.analog_const_source_x_0_1_6, 0), (self.qtgui_time_sink_x_0, 10))
+        self.connect((self.analog_const_source_x_0_1_7, 0), (self.qtgui_time_sink_x_0, 11))
         self.connect((self.blocks_file_source_0, 0), (self.blocks_throttle_0, 0))
         self.connect((self.blocks_throttle_0, 0), (self.neural_networks_nn_mod_py_cf_0, 0))
-        self.connect((self.bpsk, 0), (self.qtgui_time_sink_x_0, 4))
-        self.connect((self.cpfsk, 0), (self.qtgui_time_sink_x_0, 5))
-        self.connect((self.gfsk, 0), (self.qtgui_time_sink_x_0, 6))
         self.connect((self.neural_networks_nn_mod_py_cf_0, 0), (self.qtgui_time_sink_x_0, 0))
-        self.connect((self.pam4, 0), (self.qtgui_time_sink_x_0, 7))
-        self.connect((self.psk_8, 0), (self.qtgui_time_sink_x_0, 1))
-        self.connect((self.qam16, 0), (self.qtgui_time_sink_x_0, 8))
-        self.connect((self.qam64, 0), (self.qtgui_time_sink_x_0, 9))
-        self.connect((self.qpsk, 0), (self.qtgui_time_sink_x_0, 10))
-        self.connect((self.wbfm, 0), (self.qtgui_time_sink_x_0, 11))
 
     def closeEvent(self, event):
         self.settings = Qt.QSettings("GNU Radio", "NN_MOD")
